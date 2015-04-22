@@ -947,7 +947,7 @@ class ThreadPool(object):
             if force_quit_timeout:
                 timed_out = False
                 need_force_quit = bool(zombies)
-                for workers in self.workers:
+                for worker in self.workers:
                     if not timed_out and worker.isAlive():
                         timed_out = True
                         worker.join(force_quit_timeout)
